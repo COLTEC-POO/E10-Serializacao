@@ -3,6 +3,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.Serializable;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
 
 public abstract class Conta implements ITaxas, Serializable {
 
@@ -209,7 +212,20 @@ public abstract class Conta implements ITaxas, Serializable {
             exc.printStackTrace();
         }
 
+    }
 
+    public static Object restauraconta( String nomearquivo){
+        Object conta=null;
+        try{
+            FileInputStream fStream=new FileInputStream(nomearquivo);
+            ObjectInputStream oStream=new ObjectInputStream(fStream);
+            conta=(Conta) ((ObjectInputStream) oStream).readObject();
+            oStream.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return conta;
     }
 
 }

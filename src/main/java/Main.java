@@ -46,6 +46,10 @@ public class Main {
             sorvebao.salvaconta(sorvebao);
             jonas.salvaconta(jonas);
 
+            //testa restaurar conta
+            System.out.println(sorvebao.restauraconta("11-55"));
+            System.out.println(jonas.restauraconta("22-1"));
+
         }catch( ValorNegativoException e){
             System.out.println(e.getMessage());
 
