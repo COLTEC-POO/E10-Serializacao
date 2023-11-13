@@ -43,7 +43,7 @@ public class Main {
         duque.salvarConta();
 
         // Carregar a conta
-        Conta contaCarregada = Conta.carregarConta("2-Duque.ser");
+        Conta contaCarregada = Conta.carregarConta("2-Duque.txt");
         if (contaCarregada != null) {
             System.out.println("Conta carregada:\n" + contaCarregada);
         }
